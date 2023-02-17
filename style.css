@@ -1,77 +1,108 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  font-family: sans-serif;
 }
 
-body {
-  height: 100vh;
-  display: grid;
-  place-items: center;
+h1,
+h3 {
+  text-align: center;
 }
-li {
-  list-style-type: none;
-  width: 500px;
-  text-align: justify;
-  margin-left: 150px;
-  font-size: 26px;
+
+h1 {
+  font-size: 30px;
 }
 
 h3 {
   font-size: 50px;
+  margin-top: 10px;
 }
 
-.client {
-  font-size: 26px;
-  margin-bottom: -75px;
+.carousel {
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
 }
 
-.slider {
-  width: 100%;
-  max-width: 800px;
-  height: 350px;
+.slides {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slides-item {
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  flex-shrink: 0;
+  font-size: 100px;
+  height: 400px;
+  justify-content: center;
+  margin: 0 1rem;
   position: relative;
-  overflow: hidden; /* <===  */
-  border-radius: 15px;
-}
-
-.slide {
+  transform: scale(1);
+  transform-origin: center center;
+  transition: transform 0.5s;
   width: 100%;
-  max-width: 800px;
-  height: 350px;
-  position: absolute;
-  transition: all 0.5s;
+  scroll-snap-align: start;
+  font-size: 30px;
 }
 
-.slide img {
-  width: 5%;
-  height: -80%;
-  position: relative;
-  top: 50px;
-  left: 20px;
+.carousel__nav {
+  padding: 1.25rem 0.5rem;
 }
 
-.btn {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  padding: 10px;
-  border: 2px solid black;
+.slider-nav {
+  align-items: center;
+  background-color: #ddd;
   border-radius: 50%;
-  z-index: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  font-size: 18px;
-}
-.btn:active {
-  transform: scale(1.1);
-}
-.btn-prev {
-  top: 45%;
-  left: 2%;
+  color: #000;
+  display: inline-flex;
+  height: 1.5rem;
+  justify-content: center;
+  padding: 0.5rem;
+  position: relative;
+  text-decoration: none;
+  width: 1.5rem;
 }
 
-.btn-next {
-  top: 45%;
-  right: 2%;
+.slider-nav:hover,
+.slider-nav:active {
+  background-color: #000;
+  color: #fff;
+}
+
+.slide-1 {
+  background-color: #fdc;
+}
+
+.slide-2 {
+  background-color: #bfd;
+}
+
+.slide-3 {
+  background-color: #cdf;
+}
+
+.slide-4 {
+  background-color: #dca;
+}
+
+.slide-5 {
+  background-color: #ffc;
+}
+
+/*Hides scrollbar in firefox*/
+.slides {
+  scrollbar-width: none;
+}
+/*Hides
+  scrollbar
+  in
+  webkit
+  and
+  blink
+  powered
+  browsers*/
+.slides::-webkit-scrollbar {
+  display: none;
 }
